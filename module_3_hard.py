@@ -21,16 +21,17 @@ def calculate_structure_sum(*args):
                 total_sum += inner_sum
                 total_length += inner_length
 
-    return total_sum, total_length
+    return total_sum, total_length  # Возвращаем кортеж (сумма, длина)
 
 
 data_structure = [
-    [1, 2, 3],
-    {'a': 4, 'b': 5},
-    (6, {'cube': 7, 'drum': 8}),
-    "Hi",
-    ((), [{(2, 'Name', ('Zero', 35))}])
+    [1, 2, 3],  # Сумма: 6
+    {'a': 4, 'b': 5},  # Сумма: 9
+    (6, {'cube': 7, 'drum': 8}),  # Сумма: 21
+    "Hello",  # Длина: 5
+    ((), [{(2, 'Urban', ('Urban2', 35))}])  # Сумма: 2 + 35 = 37
 ]
 
-result = calculate_structure_sum(*data_structure)
-print(result)
+result_sum, result_length = calculate_structure_sum(*data_structure)
+total_result = result_sum + result_length
+print(total_result)
